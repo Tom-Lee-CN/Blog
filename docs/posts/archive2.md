@@ -1,7 +1,7 @@
 ---
 date: 1998-01-02
 category:
-  - History
+  - frontend
 tag:
   - WWII
 archive: true

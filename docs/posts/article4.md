@@ -1,8 +1,7 @@
 ---
 date: 2022-01-04
 category:
-  - Category A
-  - Category B
+  - frontend
 tag:
   - tag A
   - tag B

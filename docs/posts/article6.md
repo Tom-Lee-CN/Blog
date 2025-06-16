@@ -1,8 +1,7 @@
 ---
 date: 2022-01-06
 category:
-  - Category A
-  - Category B
+  - weekend
 tag:
   - tag A
   - tag B
