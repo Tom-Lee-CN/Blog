@@ -1,13 +1,13 @@
 ---
 date: 2025-06-16
 category:
-  - frontend
+  - backend
 tag:
   - node
   - backend
 ---
 
-### Express
+### Express框架基础
 
 ```javascript
 // express 框架生成器

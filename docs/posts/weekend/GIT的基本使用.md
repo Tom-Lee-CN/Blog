@@ -1,16 +1,15 @@
 ---
 date: 2025-06-16
 category:
-  - frontend
+  - weekend
 tag:
-  - tag C
-  - tag D
+  - GIT
 
 ---
 
 
 
-# GIT
+# GIT的基本使用
 
 
 

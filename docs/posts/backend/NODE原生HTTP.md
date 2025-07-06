@@ -1,13 +1,13 @@
 ---
 date: 2025-06-16
 category:
-  - frontend
+  - backend
 tag:
   - node
   - backend
 ---
 
-# node http server
+# NODE原生HTTP
 
 ### 创建基本的Node服务器并接收http请求(原生)
 

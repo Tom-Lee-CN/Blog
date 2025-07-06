@@ -1,14 +1,14 @@
 ---
 date: 2025-06-16
 category:
-  - frontend
+  - backend
 tag:
   - node
   - backend
 
 ---
 
-# seesion and jwt
+# SEESION与JWT
 
 ## Session
 

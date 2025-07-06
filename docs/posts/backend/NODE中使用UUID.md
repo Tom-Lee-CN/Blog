@@ -1,7 +1,7 @@
 ---
 date: 2025-06-16
 category:
-  - frontend
+  - backend
 tag:
   - node
   - backend
@@ -11,7 +11,7 @@ tag:
 
 
 
-# UUID的使用
+# NODE中使用UUID
 
 ```js
 // 用于生成UUID

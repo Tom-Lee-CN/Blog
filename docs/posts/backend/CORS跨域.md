@@ -1,4 +1,14 @@
-# cross-domain
+---
+date: 2025-07-06
+category:
+  - backend
+tag:
+  - node
+  - backend
+
+---
+
+### CORS跨域
 
 ```js
 // 设置后端响应头

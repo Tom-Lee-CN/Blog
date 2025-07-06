@@ -9,7 +9,7 @@ tag:
 
 ---
 
-# HTTP请求
+# 原生与Fetch的HTTP请求
 
 ## 原生请求
 
