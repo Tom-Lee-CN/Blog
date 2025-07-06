@@ -11,7 +11,7 @@ tag:
 
 # GIT的基本使用
 
-
+## 基本使用
 
 ```js
 // 这个命令，会在“~/.gitconfig”中以如下形式输出设置文件。
@@ -70,7 +70,10 @@ git clone git@github.com:用户名称/仓库名.git
 git reset --hard commitID
 // 本地commit回退后，提交让远程仓库同步回退
 git push -f origin main
-// gitnone语法
+```
+
+## gitnone语法
+
 以”#”号开头表示注释；
 以斜杠“/”开头表示目录；
 以星号“*”通配多个字符；
@@ -83,4 +86,3 @@ target/ ：表示过滤这个文件夹下的所有文件
 !*.java , !/dir/test/     !开头表示不过滤
 *.[ab]    支持通配符：过滤所有以.a或者.b为扩展名的文件
 /test  仅仅忽略项目根目录下的 test 文件，不包括 child/test等非根目录的test目录
-```

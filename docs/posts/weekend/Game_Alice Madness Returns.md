@@ -7,7 +7,7 @@ tag:
   - Game option
 ---
 
-# 爱丽丝：疯狂回归 60 帧设置
+# 爱丽丝:疯狂回归 60 帧设置
 
 ![](https://upload.wikimedia.org/wikipedia/zh/d/d8/AliceMadnessReturns.jpg)
 
