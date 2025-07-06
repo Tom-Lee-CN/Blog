@@ -1,4 +1,4 @@
-import comp from "D:/工作空间/1.项目/vuepress-starter/docs/.vuepress/.temp/pages/tag/frontend/index.html.vue"
+import comp from "C:/Users/Tom-Desktop-GIGABYTE/Documents/work space/Blog/docs/.vuepress/.temp/pages/tag/frontend/index.html.vue"
 const data = JSON.parse("{\"path\":\"/tag/frontend/\",\"title\":\"Tag frontend\",\"lang\":\"en-US\",\"frontmatter\":{\"title\":\"Tag frontend\",\"sidebar\":false,\"blog\":{\"type\":\"category\",\"name\":\"frontend\",\"key\":\"tag\"},\"layout\":\"Tag\"},\"headers\":[],\"git\":{},\"filePathRelative\":null,\"excerpt\":\"\"}")
 export { comp, data }
 

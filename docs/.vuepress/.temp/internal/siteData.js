@@ -1,4 +1,4 @@
-export const siteData = JSON.parse("{\"base\":\"/Blog/\",\"lang\":\"en-US\",\"title\":\"VuePress\",\"description\":\"My first VuePress Site\",\"head\":[],\"locales\":{}}")
+export const siteData = JSON.parse("{\"base\":\"/Blog/\",\"lang\":\"en-US\",\"title\":\"Tom`s Blog\",\"description\":\"欢迎来到Tom`s Blog\",\"head\":[],\"locales\":{}}")
 
 if (import.meta.webpackHot) {
   import.meta.webpackHot.accept()
