@@ -1,5 +1,5 @@
 ---
-date: 2025-06-16
+date: 2025-07-11
 category:
   - weekend
 tag:
@@ -7,13 +7,9 @@ tag:
   - backend
   - frontend
   - weekend
-
-
 ---
 
-
-
-# Cookie的详细资料
+# Cookie 的详细资料
 
 #### 1. 什么是 Cookie？
 
@@ -48,13 +44,13 @@ function setCookie(name, value, days) {
   let expires = "";
   if (days) {
     let date = new Date();
-    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000)); // 将天数转换为毫秒
+    date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000); // 将天数转换为毫秒
     expires = "; expires=" + date.toUTCString();
   }
   document.cookie = name + "=" + (value || "") + expires + "; path=/";
 }
-setCookie("username", "JohnDoe", 7);  // 设置一个名为 'username' 的 Cookie，有效期 7 天
-AI写代码javascript运行
+setCookie("username", "JohnDoe", 7); // 设置一个名为 'username' 的 Cookie，有效期 7 天
+AI写代码javascript运行;
 ```
 
 ##### 3.2 获取 Cookie
@@ -63,16 +59,16 @@ AI写代码javascript运行
 // 获取指定名字的 Cookie
 function getCookie(name) {
   let nameEQ = name + "=";
-  let ca = document.cookie.split(';');
+  let ca = document.cookie.split(";");
   for (let i = 0; i < ca.length; i++) {
     let c = ca[i];
-    while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+    while (c.charAt(0) == " ") c = c.substring(1, c.length);
     if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
   }
   return null;
 }
-let user = getCookie("username");  // 获取名为 'username' 的 Cookie 值
-AI写代码javascript运行
+let user = getCookie("username"); // 获取名为 'username' 的 Cookie 值
+AI写代码javascript运行;
 ```
 
 ##### 3.3 删除 Cookie
@@ -80,10 +76,10 @@ AI写代码javascript运行
 ```javascript
 // 删除指定名字的 Cookie
 function eraseCookie(name) {
-  document.cookie = name + '=; Max-Age=-99999999;';  // 设置 Max-Age 为负值删除 Cookie
+  document.cookie = name + "=; Max-Age=-99999999;"; // 设置 Max-Age 为负值删除 Cookie
 }
-eraseCookie("username");  // 删除 'username' 的 Cookie
-AI写代码javascript运行
+eraseCookie("username"); // 删除 'username' 的 Cookie
+AI写代码javascript运行;
 ```
 
 ##### 3.4 Cookie 操作注意事项
@@ -111,16 +107,16 @@ public class CookieController {
     public String setCookie(HttpServletResponse response) {
         // 创建一个 Cookie 对象
         Cookie cookie = new Cookie("username", "JohnDoe");
-        
+
         // 设置 Cookie 的有效路径
         cookie.setPath("/");
-        
+
         // 设置 Cookie 的有效期为 7 天
         cookie.setMaxAge(7 * 24 * 60 * 60);
-        
+
         // 添加到响应中
         response.addCookie(cookie);
-        
+
         return "Cookie 已设置";
     }
 }
@@ -172,10 +168,10 @@ public class CookieController {
         Cookie cookie = new Cookie("username", null);
         cookie.setMaxAge(0);
         cookie.setPath("/");
-        
+
         // 添加到响应中
         response.addCookie(cookie);
-        
+
         return "Cookie 已删除";
     }
 }
@@ -234,13 +230,13 @@ AI写代码java运行
 // 前端设置 Cookie 并发送 Ajax 请求
 setCookie("username", "JohnDoe", 7);
 
-fetch('/get-cookie', {
-  method: 'GET',
-  credentials: 'include'  // 无论是同源还是跨域请求，都携带Cookie
+fetch("/get-cookie", {
+  method: "GET",
+  credentials: "include", // 无论是同源还是跨域请求，都携带Cookie
 })
-.then(response => response.text())
-.then(data => console.log(data));
-AI写代码javascript运行
+  .then((response) => response.text())
+  .then((data) => console.log(data));
+AI写代码javascript运行;
 ```
 
 ##### 6.2 后端 Java 处理 Cookie 请求

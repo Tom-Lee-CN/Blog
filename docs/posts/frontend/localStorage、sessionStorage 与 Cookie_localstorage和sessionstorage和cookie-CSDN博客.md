@@ -1,15 +1,12 @@
 ---
-date: 2025-06-16
+date: 2025-07-11
 category:
   - frontend
 tag:
   - node
   - frontend
   - storage
-
 ---
-
-
 
 # 前端数据存储全解析：localStorage、sessionStorage 与 Cookie
 
@@ -51,11 +48,11 @@ tag:
 
 14. ```javascript
     // 基本存储
-    localStorage.setItem('username', 'Alice');
+    localStorage.setItem("username", "Alice");
     // 也可以使用直接赋值的方式（不推荐，但可行）
-    localStorage.theme = 'dark';
-    AI写代码javascript
-    运行
+    localStorage.theme = "dark";
+    AI写代码javascript;
+    运行;
     ```
 
 15. #### 2. 读取数据
@@ -64,13 +61,13 @@ tag:
 
 17. ```javascript
     // 读取存储的数据
-    const username = localStorage.getItem('username');
-    console.log(username);  // 输出：Alice
+    const username = localStorage.getItem("username");
+    console.log(username); // 输出：Alice
     // 访问不存在的数据
-    const nonExistent = localStorage.getItem('nonExistent');
-    console.log(nonExistent);  // 输出：null
-    AI写代码javascript
-    运行
+    const nonExistent = localStorage.getItem("nonExistent");
+    console.log(nonExistent); // 输出：null
+    AI写代码javascript;
+    运行;
     ```
 
 18. #### 3. 删除数据
@@ -79,9 +76,9 @@ tag:
 
 20. ```javascript
     // 删除单个数据
-    localStorage.removeItem('username');
-    AI写代码javascript
-    运行
+    localStorage.removeItem("username");
+    AI写代码javascript;
+    运行;
     ```
 
 21. #### 4. 清空所有数据
@@ -91,8 +88,8 @@ tag:
 23. ```javascript
     // 清空所有 localStorage 数据
     localStorage.clear();
-    AI写代码javascript
-    运行
+    AI写代码javascript;
+    运行;
     ```
 
 24. #### 5. 更新数据
@@ -101,9 +98,9 @@ tag:
 
 26. ```javascript
     // 更新现有数据
-    localStorage.setItem('username', 'Bob');
-    AI写代码javascript
-    运行
+    localStorage.setItem("username", "Bob");
+    AI写代码javascript;
+    运行;
     ```
 
 27. #### 6. 获取存储键名
@@ -112,14 +109,14 @@ tag:
 
 29. ```javascript
     // 假设存储了多个数据
-    localStorage.setItem('username', 'Alice');
-    localStorage.setItem('theme', 'dark');
-    localStorage.setItem('language', 'en');
+    localStorage.setItem("username", "Alice");
+    localStorage.setItem("theme", "dark");
+    localStorage.setItem("language", "en");
     // 获取索引为 1 的键名
     const secondKey = localStorage.key(1);
-    console.log(secondKey);  // 可能输出：'theme'（顺序不保证）
-    AI写代码javascript
-    运行
+    console.log(secondKey); // 可能输出：'theme'（顺序不保证）
+    AI写代码javascript;
+    运行;
     ```
 
 30. #### 7. 存储对象和数组
@@ -128,29 +125,29 @@ tag:
 
 32. ```javascript
     // 存储对象
-    const user = { 
-      name: 'Alice', 
+    const user = {
+      name: "Alice",
       age: 25,
       preferences: {
-        theme: 'dark',
-        notifications: true
-      }
+        theme: "dark",
+        notifications: true,
+      },
     };
-    localStorage.setItem('user', JSON.stringify(user));
+    localStorage.setItem("user", JSON.stringify(user));
     // 读取对象
-    const storedUser = JSON.parse(localStorage.getItem('user'));
-    console.log(storedUser.preferences.theme);  // 输出：dark
+    const storedUser = JSON.parse(localStorage.getItem("user"));
+    console.log(storedUser.preferences.theme); // 输出：dark
     // 存储数组
     const todos = [
-      { id: 1, text: '学习 JavaScript', completed: true },
-      { id: 2, text: '掌握 Web Storage API', completed: false }
+      { id: 1, text: "学习 JavaScript", completed: true },
+      { id: 2, text: "掌握 Web Storage API", completed: false },
     ];
-    localStorage.setItem('todos', JSON.stringify(todos));
+    localStorage.setItem("todos", JSON.stringify(todos));
     // 读取数组
-    const storedTodos = JSON.parse(localStorage.getItem('todos'));
-    console.log(storedTodos[1].text);  // 输出：掌握 Web Storage API
-    AI写代码javascript
-    运行
+    const storedTodos = JSON.parse(localStorage.getItem("todos"));
+    console.log(storedTodos[1].text); // 输出：掌握 Web Storage API
+    AI写代码javascript;
+    运行;
     ```
 
 33. #### 8. Vue 3 中使用 localStorage
@@ -159,53 +156,55 @@ tag:
 
 35. ```html
     <script setup>
-    import { ref, onMounted, watch } from 'vue';
-    // 定义响应式状态
-    const theme = ref('light');
-    const username = ref('');
-    const savedNotes = ref([]);
-    // 组件挂载时从 localStorage 加载数据
-    onMounted(() => {
-      // 加载主题设置
-      const savedTheme = localStorage.getItem('theme');
-      if (savedTheme) {
-        theme.value = savedTheme;
-      }
-      // 加载用户名
-      const savedUsername = localStorage.getItem('username');
-      if (savedUsername) {
-        username.value = savedUsername;
-      }
-      // 加载笔记列表
-      const notes = localStorage.getItem('notes');
-      if (notes) {
-        savedNotes.value = JSON.parse(notes);
-      }
-    });
-    // 监听变化并保存到 localStorage
-    watch(theme, (newTheme) => {
-      localStorage.setItem('theme', newTheme);
-      // 可以在这里应用主题变化
-      document.documentElement.setAttribute('data-theme', newTheme);
-    });
-    watch(username, (newUsername) => {
-      localStorage.setItem('username', newUsername);
-    });
-    // 添加新笔记的方法
-    const addNote = (noteText) => {
-      const newNote = {
-        id: Date.now(),
-        text: noteText,
-        createdAt: new Date().toISOString()
+      import { ref, onMounted, watch } from "vue";
+      // 定义响应式状态
+      const theme = ref("light");
+      const username = ref("");
+      const savedNotes = ref([]);
+      // 组件挂载时从 localStorage 加载数据
+      onMounted(() => {
+        // 加载主题设置
+        const savedTheme = localStorage.getItem("theme");
+        if (savedTheme) {
+          theme.value = savedTheme;
+        }
+        // 加载用户名
+        const savedUsername = localStorage.getItem("username");
+        if (savedUsername) {
+          username.value = savedUsername;
+        }
+        // 加载笔记列表
+        const notes = localStorage.getItem("notes");
+        if (notes) {
+          savedNotes.value = JSON.parse(notes);
+        }
+      });
+      // 监听变化并保存到 localStorage
+      watch(theme, (newTheme) => {
+        localStorage.setItem("theme", newTheme);
+        // 可以在这里应用主题变化
+        document.documentElement.setAttribute("data-theme", newTheme);
+      });
+      watch(username, (newUsername) => {
+        localStorage.setItem("username", newUsername);
+      });
+      // 添加新笔记的方法
+      const addNote = (noteText) => {
+        const newNote = {
+          id: Date.now(),
+          text: noteText,
+          createdAt: new Date().toISOString(),
+        };
+        savedNotes.value.push(newNote);
+        localStorage.setItem("notes", JSON.stringify(savedNotes.value));
       };
-      savedNotes.value.push(newNote);
-      localStorage.setItem('notes', JSON.stringify(savedNotes.value));
-    };
-    // 删除笔记的方法
-    const removeNote = (noteId) => {
-      savedNotes.value = savedNotes.value.filter(note => note.id !== noteId);
-      localStorage.setItem('notes', JSON.stringify(savedNotes.value));
-    };
+      // 删除笔记的方法
+      const removeNote = (noteId) => {
+        savedNotes.value = savedNotes.value.filter(
+          (note) => note.id !== noteId
+        );
+        localStorage.setItem("notes", JSON.stringify(savedNotes.value));
+      };
     </script>
     AI写代码html
     ```
@@ -218,27 +217,30 @@ tag:
 
 39. ```javascript
     // 存储会话数据
-    sessionStorage.setItem('cartItems', JSON.stringify([
-      { id: 101, name: '商品A', quantity: 2 },
-      { id: 102, name: '商品B', quantity: 1 }
-    ]));
+    sessionStorage.setItem(
+      "cartItems",
+      JSON.stringify([
+        { id: 101, name: "商品A", quantity: 2 },
+        { id: 102, name: "商品B", quantity: 1 },
+      ])
+    );
     // 存储表单临时状态
-    sessionStorage.setItem('formProgress', '2');  // 记录用户填到第二步
-    AI写代码javascript
-    运行
+    sessionStorage.setItem("formProgress", "2"); // 记录用户填到第二步
+    AI写代码javascript;
+    运行;
     ```
 
 40. #### 2. 读取数据
 
 41. ```javascript
     // 读取购物车数据
-    const cartItems = JSON.parse(sessionStorage.getItem('cartItems'));
-    console.log(cartItems);  // 输出购物车商品数组
+    const cartItems = JSON.parse(sessionStorage.getItem("cartItems"));
+    console.log(cartItems); // 输出购物车商品数组
     // 读取表单进度
-    const formProgress = sessionStorage.getItem('formProgress');
+    const formProgress = sessionStorage.getItem("formProgress");
     console.log(`继续从第 ${formProgress} 步开始填写`);
-    AI写代码javascript
-    运行
+    AI写代码javascript;
+    运行;
     ```
 
 42. #### 3. 实际应用案例：多步骤表单
@@ -247,7 +249,7 @@ tag:
     // 保存表单数据到 sessionStorage
     function saveFormStep(stepNumber, formData) {
       sessionStorage.setItem(`formStep${stepNumber}`, JSON.stringify(formData));
-      sessionStorage.setItem('currentStep', stepNumber);
+      sessionStorage.setItem("currentStep", stepNumber);
     }
     // 从 sessionStorage 恢复表单数据
     function loadFormStep(stepNumber) {
@@ -256,21 +258,21 @@ tag:
     }
     // 获取当前步骤
     function getCurrentStep() {
-      return sessionStorage.getItem('currentStep') || '1';
+      return sessionStorage.getItem("currentStep") || "1";
     }
     // 示例：保存第一步表单数据
     saveFormStep(1, {
-      firstName: 'John',
-      lastName: 'Doe',
-      email: 'john@example.com'
+      firstName: "John",
+      lastName: "Doe",
+      email: "john@example.com",
     });
     // 示例：加载之前保存的表单数据
     const stepOneData = loadFormStep(1);
     if (stepOneData) {
       // 填充表单字段
-      document.getElementById('firstName').value = stepOneData.firstName;
-      document.getElementById('lastName').value = stepOneData.lastName;
-      document.getElementById('email').value = stepOneData.email;
+      document.getElementById("firstName").value = stepOneData.firstName;
+      document.getElementById("lastName").value = stepOneData.lastName;
+      document.getElementById("email").value = stepOneData.email;
     }
     ```
 
@@ -278,59 +280,59 @@ tag:
 
 45. ```html
     <script setup>
-    import { ref, onMounted } from 'vue';
-    // 定义多步骤表单状态
-    const currentStep = ref(1);
-    const formData = ref({
-      step1: { name: '', email: '' },
-      step2: { address: '', city: '' },
-      step3: { payment: '', terms: false }
-    });
-    // 组件挂载时恢复表单状态
-    onMounted(() => {
-      const savedStep = sessionStorage.getItem('currentStep');
-      if (savedStep) {
-        currentStep.value = parseInt(savedStep);
-      }
-      // 恢复每个步骤的数据
-      for (let i = 1; i <= 3; i++) {
-        const stepData = sessionStorage.getItem(`formStep${i}`);
-        if (stepData) {
-          formData.value[`step${i}`] = JSON.parse(stepData);
+      import { ref, onMounted } from 'vue';
+      // 定义多步骤表单状态
+      const currentStep = ref(1);
+      const formData = ref({
+        step1: { name: '', email: '' },
+        step2: { address: '', city: '' },
+        step3: { payment: '', terms: false }
+      });
+      // 组件挂载时恢复表单状态
+      onMounted(() => {
+        const savedStep = sessionStorage.getItem('currentStep');
+        if (savedStep) {
+          currentStep.value = parseInt(savedStep);
         }
-      }
-    });
-    // 进入下一步
-    const nextStep = () => {
-      // 保存当前步骤数据
-      sessionStorage.setItem(`formStep${currentStep.value}`, 
-        JSON.stringify(formData.value[`step${currentStep.value}`]));
-      // 前进到下一步
-      currentStep.value++;
-      sessionStorage.setItem('currentStep', currentStep.value);
-    };
-    // 返回上一步
-    const prevStep = () => {
-      currentStep.value--;
-      sessionStorage.setItem('currentStep', currentStep.value);
-    };
-    // 提交表单
-    const submitForm = () => {
-      // 保存最后一步数据
-      sessionStorage.setItem(`formStep${currentStep.value}`, 
-        JSON.stringify(formData.value[`step${currentStep.value}`]));
-    }
-      // 提交所有数据到服务器
-      const allFormData = {
-        ...formData.value.step1,
-        ...formData.value.step2,
-        ...formData.value.step3
+        // 恢复每个步骤的数据
+        for (let i = 1; i <= 3; i++) {
+          const stepData = sessionStorage.getItem(`formStep${i}`);
+          if (stepData) {
+            formData.value[`step${i}`] = JSON.parse(stepData);
+          }
+        }
+      });
+      // 进入下一步
+      const nextStep = () => {
+        // 保存当前步骤数据
+        sessionStorage.setItem(`formStep${currentStep.value}`,
+          JSON.stringify(formData.value[`step${currentStep.value}`]));
+        // 前进到下一步
+        currentStep.value++;
+        sessionStorage.setItem('currentStep', currentStep.value);
       };
-      // 提交后清除会话数据
-      sessionStorage.clear();
-      // TODO: 发送数据到服务器
-      console.log('提交表单数据:', allFormData);
-    };
+      // 返回上一步
+      const prevStep = () => {
+        currentStep.value--;
+        sessionStorage.setItem('currentStep', currentStep.value);
+      };
+      // 提交表单
+      const submitForm = () => {
+        // 保存最后一步数据
+        sessionStorage.setItem(`formStep${currentStep.value}`,
+          JSON.stringify(formData.value[`step${currentStep.value}`]));
+      }
+        // 提交所有数据到服务器
+        const allFormData = {
+          ...formData.value.step1,
+          ...formData.value.step2,
+          ...formData.value.step3
+        };
+        // 提交后清除会话数据
+        sessionStorage.clear();
+        // TODO: 发送数据到服务器
+        console.log('提交表单数据:', allFormData);
+      };
     </script>
     AI写代码html
     ```
@@ -351,15 +353,15 @@ tag:
 
 51. ```javascript
     // 在其他打开的同源窗口/标签页中监听 localStorage 变化
-    window.addEventListener('storage', (event) => {
-      console.log('存储变化:', {
-        key: event.key,           // 变化的键名
+    window.addEventListener("storage", (event) => {
+      console.log("存储变化:", {
+        key: event.key, // 变化的键名
         oldValue: event.oldValue, // 旧值
         newValue: event.newValue, // 新值
-        url: event.url            // 触发变化的页面 URL
+        url: event.url, // 触发变化的页面 URL
       });
       // 根据变化更新当前页面状态
-      if (event.key === 'theme') {
+      if (event.key === "theme") {
         document.body.className = event.newValue;
       }
     });
@@ -381,11 +383,11 @@ tag:
       set(key, value, expiryInSeconds) {
         const data = {
           value,
-          timestamp: Date.now()
+          timestamp: Date.now(),
         };
         // 添加过期时间（如果指定）
         if (expiryInSeconds) {
-          data.expiry = Date.now() + (expiryInSeconds * 1000);
+          data.expiry = Date.now() + expiryInSeconds * 1000;
         }
         localStorage.setItem(key, JSON.stringify(data));
         return true;
@@ -447,13 +449,16 @@ tag:
             // 忽略非 JSON 数据
           }
         }
-      }
+      },
     };
     // 使用示例
-    storageManager.set('userPreferences', { theme: 'dark', fontSize: 'medium' });
-    storageManager.set('authToken', 'xyz123', 3600); // 1小时过期
-    const prefs = storageManager.get('userPreferences');
-    const token = storageManager.get('authToken');
+    storageManager.set("userPreferences", {
+      theme: "dark",
+      fontSize: "medium",
+    });
+    storageManager.set("authToken", "xyz123", 3600); // 1小时过期
+    const prefs = storageManager.get("userPreferences");
+    const token = storageManager.get("authToken");
     ```
 
 55. ### 五、Cookie 详解
@@ -500,20 +505,22 @@ tag:
     function setCookie(name, value, options = {}) {
       // 默认选项
       const defaultOptions = {
-        path: '/',           // 默认路径为根目录
-        expires: undefined,  // 默认无过期时间（会话期间有效）
-        secure: false,       // 默认不启用安全标志
-        sameSite: 'Lax'      // 默认使用 Lax 模式（防止 CSRF，但允许一般导航）
+        path: "/", // 默认路径为根目录
+        expires: undefined, // 默认无过期时间（会话期间有效）
+        secure: false, // 默认不启用安全标志
+        sameSite: "Lax", // 默认使用 Lax 模式（防止 CSRF，但允许一般导航）
       };
       // 合并选项
       options = { ...defaultOptions, ...options };
       // 构建 Cookie 字符串
-      let cookieString = `${encodeURIComponent(name)}=${encodeURIComponent(value)}`;
+      let cookieString = `${encodeURIComponent(name)}=${encodeURIComponent(
+        value
+      )}`;
       // 添加过期时间
       if (options.expires) {
         if (options.expires instanceof Date) {
           cookieString += `; expires=${options.expires.toUTCString()}`;
-        } else if (typeof options.expires === 'number') {
+        } else if (typeof options.expires === "number") {
           const date = new Date();
           date.setTime(date.getTime() + options.expires * 1000);
           cookieString += `; expires=${date.toUTCString()}`;
@@ -529,11 +536,11 @@ tag:
       }
       // 添加安全标志
       if (options.secure) {
-        cookieString += '; secure';
+        cookieString += "; secure";
       }
       // 添加 HttpOnly 标志
       if (options.httpOnly) {
-        cookieString += '; httpOnly';
+        cookieString += "; httpOnly";
       }
       // 添加 SameSite 设置
       if (options.sameSite) {
@@ -545,7 +552,7 @@ tag:
     // 获取 Cookie 值
     function getCookie(name) {
       const cookieName = `${encodeURIComponent(name)}=`;
-      const cookies = document.cookie.split(';');
+      const cookies = document.cookie.split(";");
       for (let i = 0; i < cookies.length; i++) {
         let cookie = cookies[i].trim();
         if (cookie.indexOf(cookieName) === 0) {
@@ -557,23 +564,23 @@ tag:
     // 删除 Cookie
     function deleteCookie(name, options = {}) {
       // 设置过期时间为过去的日期，强制浏览器删除
-      setCookie(name, '', { 
-        ...options, 
-        expires: new Date(0) 
+      setCookie(name, "", {
+        ...options,
+        expires: new Date(0),
       });
     }
     // 使用示例
     // 设置一个7天有效的 Cookie
-    setCookie('username', 'Alice', { 
+    setCookie("username", "Alice", {
       expires: 7 * 24 * 60 * 60, // 7天（秒数）
       secure: true,
-      sameSite: 'Strict'
+      sameSite: "Strict",
     });
     // 获取 Cookie
-    const username = getCookie('username');
+    const username = getCookie("username");
     console.log(username); // 输出: Alice
     // 删除 Cookie
-    deleteCookie('username');
+    deleteCookie("username");
     ```
 
 69. ##### 4.2 实现 Cookie 管理器
@@ -588,8 +595,8 @@ tag:
        * @param {Object} options - Cookie 选项
        */
       set(name, value, options = {}) {
-        if (!name || typeof name !== 'string') {
-          throw new Error('Cookie name must be a non-empty string');
+        if (!name || typeof name !== "string") {
+          throw new Error("Cookie name must be a non-empty string");
         }
         return setCookie(name, value, options);
       },
@@ -623,34 +630,34 @@ tag:
        */
       getAll() {
         const cookies = {};
-        const cookieArray = document.cookie.split(';');
+        const cookieArray = document.cookie.split(";");
         for (let i = 0; i < cookieArray.length; i++) {
-          const parts = cookieArray[i].trim().split('=');
+          const parts = cookieArray[i].trim().split("=");
           if (parts.length >= 2) {
             const name = decodeURIComponent(parts[0]);
-            const value = decodeURIComponent(parts.slice(1).join('='));
+            const value = decodeURIComponent(parts.slice(1).join("="));
             cookies[name] = value;
           }
         }
         return cookies;
-      }
+      },
     };
     // 使用示例
-    CookieManager.set('theme', 'dark', { 
+    CookieManager.set("theme", "dark", {
       expires: 30 * 24 * 60 * 60, // 30天有效期
       secure: true,
-      sameSite: 'Lax'
+      sameSite: "Lax",
     });
-    CookieManager.set('sessionId', 'abc123', {
-      sameSite: 'Strict',
+    CookieManager.set("sessionId", "abc123", {
+      sameSite: "Strict",
       // 会话期间有效（默认情况）
     });
     // 检查 Cookie 是否存在
-    if (CookieManager.exists('theme')) {
-      console.log('主题已设置:', CookieManager.get('theme'));
+    if (CookieManager.exists("theme")) {
+      console.log("主题已设置:", CookieManager.get("theme"));
     }
     // 获取所有 Cookie
-    console.log('当前所有 Cookie:', CookieManager.getAll());
+    console.log("当前所有 Cookie:", CookieManager.getAll());
     ```
 
 71. ##### 4.3 Vue 3 中使用 Cookie
@@ -700,8 +707,8 @@ tag:
         sameSite: 'Lax'
       });
       // 应用字体大小变化
-      document.documentElement.style.fontSize = 
-        newSize === 'small' ? '14px' : 
+      document.documentElement.style.fontSize =
+        newSize === 'small' ? '14px' :
         newSize === 'medium' ? '16px' : '18px';
     });
     // 登录方法
@@ -755,17 +762,17 @@ tag:
 79. ```javascript
     // 安全 Cookie 设置示例
     // 认证令牌 - 高安全性配置
-    CookieManager.set('authToken', 'jwt_token_here', {
+    CookieManager.set("authToken", "jwt_token_here", {
       expires: 1 * 60 * 60, // 1小时过期
       secure: true,
       httpOnly: true, // 注意：这只能在服务器端设置
-      sameSite: 'Strict',
-      path: '/api' // 限制只在 API 请求时发送
+      sameSite: "Strict",
+      path: "/api", // 限制只在 API 请求时发送
     });
     // 用户偏好 - 较低安全性要求
-    CookieManager.set('theme', 'dark', {
+    CookieManager.set("theme", "dark", {
       expires: 365 * 24 * 60 * 60, // 一年过期
-      sameSite: 'Lax'
+      sameSite: "Lax",
     });
     ```
 
@@ -977,4 +984,3 @@ tag:
     // 定期执行清理
     setInterval(cleanupStorage, 60 * 60 * 1000); // 每小时清理一次
     ```
-

@@ -1,5 +1,5 @@
 ---
-date: 2025-06-16
+date: 2025-07-11
 category:
   - weekend
 tag:
@@ -7,17 +7,13 @@ tag:
   - backend
   - frontend
   - jwt
-
-
 ---
-
-
 
 # JSON Web Token 入门教程
 
 作者： [阮一峰](http://www.ruanyifeng.com/)
 
-日期： [2018年7月23日](http://www.ruanyifeng.com/blog/2018/07/)
+日期： [2018 年 7 月 23 日](http://www.ruanyifeng.com/blog/2018/07/)
 
 JSON Web Token（缩写 JWT）是目前最流行的跨域认证解决方案，本文介绍它的原理和用法。
 
@@ -78,7 +74,7 @@ JWT 的三个部分依次如下。
 写成一行，就是下面的样子。
 
 > ```javascript
-> Header.Payload.Signature
+> Header.Payload.Signature;
 > ```
 
 ![img](https://cdn.beekka.com/blogimg/asset/201807/bg2018072303.jpg)
@@ -102,7 +98,7 @@ Header 部分是一个 JSON 对象，描述 JWT 的元数据，通常是下面�
 
 ### 3.2 Payload
 
-Payload 部分也是一个 JSON 对象，用来存放实际需要传递的数据。JWT 规定了7个官方字段，供选用。
+Payload 部分也是一个 JSON 对象，用来存放实际需要传递的数据。JWT 规定了 7 个官方字段，供选用。
 
 > - iss (issuer)：签发人
 > - exp (expiration time)：过期时间
@@ -133,10 +129,7 @@ Signature 部分是对前两部分的签名，防止数据篡改。
 首先，需要指定一个密钥（secret）。这个密钥只有服务器才知道，不能泄露给用户。然后，使用 Header 里面指定的签名算法（默认是 HMAC SHA256），按照下面的公式产生签名。
 
 > ```javascript
-> HMACSHA256(
->   base64UrlEncode(header) + "." +
->   base64UrlEncode(payload),
->   secret)
+> HMACSHA256(base64UrlEncode(header) + "." + base64UrlEncode(payload), secret);
 > ```
 
 算出签名以后，把 Header、Payload、Signature 三个部分拼成一个字符串，每个部分之间用"点"（`.`）分隔，就可以返回给用户。
@@ -180,4 +173,3 @@ JWT 作为一个令牌（token），有些场合可能会放到 URL（比如 api
 - [Learn how to use JSON Web Tokens](https://github.com/dwyl/learn-json-web-tokens/blob/master/README.md), by dwyl
 
 （完）
-
