@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="generator" content="VuePress 2.0.0-rc.20" />
+    <style>
+      :root {
+        --vp-c-bg: #fff;
+      }
+
+      [data-theme='dark'] {
+        --vp-c-bg: #1b1b1f;
+      }
+
+      html,
+      body {
+        background-color: var(--vp-c-bg);
+      }
+    </style>
+    <script>
+      const useChoice = localStorage.getItem('vuepress-color-scheme')
+      const systemStatus =
+        'matchMedia' in window
+          ? window.matchMedia('(prefers-color-scheme: dark)').matches
+          : false
+
+      if (useChoice === 'light') {
+        document.documentElement.dataset.theme = 'light'
+      } else if (useChoice === 'dark' || systemStatus) {
+        document.documentElement.dataset.theme = 'dark'
+      }
+    </script>
+    <title>GIT的基本使用 | Tom`s Blog</title><meta name="description" content="欢迎来到Tom`s Blog">
+    <link rel="preload" href="/Blog/assets/style-BhOYgqmK.css" as="style"><link rel="stylesheet" href="/Blog/assets/style-BhOYgqmK.css">
+    <link rel="modulepreload" href="/Blog/assets/app-DfKvkd8b.js"><link rel="modulepreload" href="/Blog/assets/Git的基本使用.html-WC_VG6y8.js">
+    <link rel="prefetch" href="/Blog/assets/index.html-Zp8rI9G4.js" as="script"><link rel="prefetch" href="/Blog/assets/get-started.html-B7Q5WZdb.js" as="script"><link rel="prefetch" href="/Blog/assets/CORS跨域.html-RDNPuYgd.js" as="script"><link rel="prefetch" href="/Blog/assets/Cookie与Storage.html-YFiA2BA8.js" as="script"><link rel="prefetch" href="/Blog/assets/Cookie的跨域传输.html-dImLdFs1.js" as="script"><link rel="prefetch" href="/Blog/assets/Express框架基础.html-CECTgoIX.js" as="script"><link rel="prefetch" href="/Blog/assets/NODE与邮箱邮件发送.html-DA3VVZuA.js" as="script"><link rel="prefetch" href="/Blog/assets/NODE中使用UUID.html-CwB-JtnD.js" as="script"><link rel="prefetch" href="/Blog/assets/NODE原生HTTP.html-qJtSIgBE.js" as="script"><link rel="prefetch" href="/Blog/assets/SEESION与JWT.html-DvUBmZyA.js" as="script"><link rel="prefetch" href="/Blog/assets/nodeJs中间件Multer详解_使用express实现本地文件图片上传到服务器指定目录.html-7c51pfF5.js" as="script"><link rel="prefetch" href="/Blog/assets/node与mysql.html-BYUXFIBz.js" as="script"><link rel="prefetch" href="/Blog/assets/富人们真正的财富是什么.html-Dat4f6nY.js" as="script"><link rel="prefetch" href="/Blog/assets/模板.html-BTTqKSU7.js" as="script"><link rel="prefetch" href="/Blog/assets/CSS基础.html-CekKV1Ai.js" as="script"><link rel="prefetch" href="/Blog/assets/Cookie与Storage.html-D5mMfsgf.js" as="script"><link rel="prefetch" href="/Blog/assets/Cookie的详细资料.html-C074H3Bm.js" as="script"><link rel="prefetch" href="/Blog/assets/JSON Web Token 入门教程.html-CcGegeaC.js" as="script"><link rel="prefetch" href="/Blog/assets/JS基础_JS执行环境_作用域(上下文).html-BYl3rzFi.js" as="script"><link rel="prefetch" href="/Blog/assets/Promise.html-Ba1-bNop.js" as="script"><link rel="prefetch" href="/Blog/assets/localStorage、sessionStorage 与 Cookie_localstorage和sessionstorage和cookie-CSDN博客.html-DDvugbHK.js" as="script"><link rel="prefetch" href="/Blog/assets/vue使用iFrame嵌入网页，网页等比缩放，全部展示.html-Bxs5zKCh.js" as="script"><link rel="prefetch" href="/Blog/assets/为什么javascript开发人员应优先选择axios而不是fetch.html-Bkqr4Qaw.js" as="script"><link rel="prefetch" href="/Blog/assets/前端必备技能：全面解析 Session 在 Web 开发中的应用.html-k1NLNTYS.js" as="script"><link rel="prefetch" href="/Blog/assets/原型与面向对象.html-B5ccpLrX.js" as="script"><link rel="prefetch" href="/Blog/assets/原生与Fetch的HTTP请求.html-mPUBSr4b.js" as="script"><link rel="prefetch" href="/Blog/assets/回调函数.html-CO1Uu72L.js" as="script"><link rel="prefetch" href="/Blog/assets/闭包与this指向和函数上下文调用.html-BKJgWiBv.js" as="script"><link rel="prefetch" href="/Blog/assets/Game_Alice Madness Returns.html-CP98KD20.js" as="script"><link rel="prefetch" href="/Blog/assets/archive2.html-CtMmjyV0.js" as="script"><link rel="prefetch" href="/Blog/assets/sticky.html-BNRgWOUr.js" as="script"><link rel="prefetch" href="/Blog/assets/sticky2.html-BVS-IUMo.js" as="script"><link rel="prefetch" href="/Blog/assets/404.html-CbE8SKAC.js" as="script"><link rel="prefetch" href="/Blog/assets/index.html-D3aXP9BF.js" as="script"><link rel="prefetch" href="/Blog/assets/index.html-B491hFGy.js" as="script"><link rel="prefetch" href="/Blog/assets/index.html-C2ekUlFo.js" as="script"><link rel="prefetch" href="/Blog/assets/index.html-CNiZWeIU.js" as="script"><link rel="prefetch" href="/Blog/assets/index.html-DyNWCqCx.js" as="script"><link rel="prefetch" href="/Blog/assets/index.html-C7SGxs4A.js" as="script"><link rel="prefetch" href="/Blog/assets/index.html-BlDRg_ex.js" as="script"><link rel="prefetch" href="/Blog/assets/index.html-ChRhJHhS.js" as="script"><link rel="prefetch" href="/Blog/assets/index.html-wleo8TDj.js" as="script"><link rel="prefetch" href="/Blog/assets/index.html-CAitVArE.js" as="script"><link rel="prefetch" href="/Blog/assets/index.html-CvOm9RrA.js" as="script"><link rel="prefetch" href="/Blog/assets/index.html-DYhy7jom.js" as="script"><link rel="prefetch" href="/Blog/assets/index.html-BQJkzPT_.js" as="script"><link rel="prefetch" href="/Blog/assets/index.html-Cwk3GUwn.js" as="script"><link rel="prefetch" href="/Blog/assets/index.html-BLmC9ibv.js" as="script"><link rel="prefetch" href="/Blog/assets/index.html-C3kdGtiR.js" as="script"><link rel="prefetch" href="/Blog/assets/index.html-BEysN3l4.js" as="script"><link rel="prefetch" href="/Blog/assets/index.html-HV0is9os.js" as="script"><link rel="prefetch" href="/Blog/assets/index.html-CYFEGwv3.js" as="script"><link rel="prefetch" href="/Blog/assets/index.html-dfucFz_X.js" as="script"><link rel="prefetch" href="/Blog/assets/index.html-Do1hq1Sj.js" as="script"><link rel="prefetch" href="/Blog/assets/index.html-Mwsd6Tqe.js" as="script"><link rel="prefetch" href="/Blog/assets/index.html-BnY7w7Ar.js" as="script"><link rel="prefetch" href="/Blog/assets/index.html-Bi9SG1qx.js" as="script"><link rel="prefetch" href="/Blog/assets/index.html-BK7jLMiw.js" as="script"><link rel="prefetch" href="/Blog/assets/index.html-4e-r11iO.js" as="script"><link rel="prefetch" href="/Blog/assets/index.html-CQRbBcYI.js" as="script"><link rel="prefetch" href="/Blog/assets/index.html-CruJG5iz.js" as="script"><link rel="prefetch" href="/Blog/assets/index.html-B4H_FOdP.js" as="script"><link rel="prefetch" href="/Blog/assets/index.html-C95wRKqK.js" as="script"><link rel="prefetch" href="/Blog/assets/index.html-eEdLz3El.js" as="script"><link rel="prefetch" href="/Blog/assets/index.html-DYHrr6Jb.js" as="script"><link rel="prefetch" href="/Blog/assets/index.html-Darvk3F8.js" as="script">
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="vp-theme-container external-link-icon" vp-container><!--[--><header class="vp-navbar" vp-navbar><div class="vp-toggle-sidebar-button" title="toggle sidebar" aria-expanded="false" role="button" tabindex="0"><div class="icon" aria-hidden="true"><span></span><span></span><span></span></div></div><span><a class="route-link" href="/Blog/"><img class="vp-site-logo" src="https://vuejs.press/images/hero.png" alt="Tom`s Blog"><span class="vp-site-name vp-hide-mobile" aria-hidden="true">Tom`s Blog</span></a></span><div class="vp-navbar-items-wrapper" style=""><!--[--><!--]--><nav class="vp-navbar-items vp-hide-mobile" aria-label="site navigation"><!--[--><div class="vp-navbar-item"><a class="route-link auto-link" href="/Blog/" aria-label="Home"><!--[--><!--[--><!--]--><!--]-->Home<!--[--><!--[--><!--]--><!--]--></a></div><div class="vp-navbar-item"><a class="route-link auto-link" href="/Blog/article/" aria-label="文章"><!--[--><!--[--><!--]--><!--]-->文章<!--[--><!--[--><!--]--><!--]--></a></div><div class="vp-navbar-item"><a class="route-link auto-link" href="/Blog/category/" aria-label="分类"><!--[--><!--[--><!--]--><!--]-->分类<!--[--><!--[--><!--]--><!--]--></a></div><div class="vp-navbar-item"><a class="route-link auto-link" href="/Blog/tag/" aria-label="标签"><!--[--><!--[--><!--]--><!--]-->标签<!--[--><!--[--><!--]--><!--]--></a></div><div class="vp-navbar-item"><a class="route-link auto-link" href="/Blog/timeline/" aria-label="最新"><!--[--><!--[--><!--]--><!--]-->最新<!--[--><!--[--><!--]--><!--]--></a></div><!--]--></nav><!--[--><!--]--><button type="button" class="vp-toggle-color-mode-button" title="toggle color mode"><svg class="light-icon" viewbox="0 0 32 32" style=""><path d="M16 12.005a4 4 0 1 1-4 4a4.005 4.005 0 0 1 4-4m0-2a6 6 0 1 0 6 6a6 6 0 0 0-6-6z" fill="currentColor"></path><path d="M5.394 6.813l1.414-1.415l3.506 3.506L8.9 10.318z" fill="currentColor"></path><path d="M2 15.005h5v2H2z" fill="currentColor"></path><path d="M5.394 25.197L8.9 21.691l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 25.005h2v5h-2z" fill="currentColor"></path><path d="M21.687 23.106l1.414-1.415l3.506 3.506l-1.414 1.414z" fill="currentColor"></path><path d="M25 15.005h5v2h-5z" fill="currentColor"></path><path d="M21.687 8.904l3.506-3.506l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 2.005h2v5h-2z" fill="currentColor"></path></svg><svg class="dark-icon" viewbox="0 0 32 32" style="display:none;"><path d="M13.502 5.414a15.075 15.075 0 0 0 11.594 18.194a11.113 11.113 0 0 1-7.975 3.39c-.138 0-.278.005-.418 0a11.094 11.094 0 0 1-3.2-21.584M14.98 3a1.002 1.002 0 0 0-.175.016a13.096 13.096 0 0 0 1.825 25.981c.164.006.328 0 .49 0a13.072 13.072 0 0 0 10.703-5.555a1.01 1.01 0 0 0-.783-1.565A13.08 13.08 0 0 1 15.89 4.38A1.015 1.015 0 0 0 14.98 3z" fill="currentColor"></path></svg></button><!----></div></header><!--]--><div class="vp-sidebar-mask"></div><!--[--><aside class="vp-sidebar" vp-sidebar><nav class="vp-navbar-items" aria-label="site navigation"><!--[--><div class="vp-navbar-item"><a class="route-link auto-link" href="/Blog/" aria-label="Home"><!--[--><!--[--><!--]--><!--]-->Home<!--[--><!--[--><!--]--><!--]--></a></div><div class="vp-navbar-item"><a class="route-link auto-link" href="/Blog/article/" aria-label="文章"><!--[--><!--[--><!--]--><!--]-->文章<!--[--><!--[--><!--]--><!--]--></a></div><div class="vp-navbar-item"><a class="route-link auto-link" href="/Blog/category/" aria-label="分类"><!--[--><!--[--><!--]--><!--]-->分类<!--[--><!--[--><!--]--><!--]--></a></div><div class="vp-navbar-item"><a class="route-link auto-link" href="/Blog/tag/" aria-label="标签"><!--[--><!--[--><!--]--><!--]-->标签<!--[--><!--[--><!--]--><!--]--></a></div><div class="vp-navbar-item"><a class="route-link auto-link" href="/Blog/timeline/" aria-label="最新"><!--[--><!--[--><!--]--><!--]-->最新<!--[--><!--[--><!--]--><!--]--></a></div><!--]--></nav><!--[--><!--]--><ul class="vp-sidebar-items"><!--[--><li><p tabindex="0" class="vp-sidebar-item vp-sidebar-heading">GIT的基本使用 <!----></p><!----></li><!--]--></ul><!--[--><!--]--></aside><!--]--><!--[--><main class="vp-page"><!--[--><!--]--><div vp-content><!--[--><!--]--><div><h1 id="git的基本使用" tabindex="-1"><a class="header-anchor" href="#git的基本使用"><span>GIT的基本使用</span></a></h1><h2 id="基本使用" tabindex="-1"><a class="header-anchor" href="#基本使用"><span>基本使用</span></a></h2><div class="language-javascript line-numbers-mode" data-highlighter="prismjs" data-ext="js"><pre><code><span class="line"><span class="token comment">// 这个命令，会在“~/.gitconfig”中以如下形式输出设置文件。</span></span>
+<span class="line">$ git config <span class="token operator">--</span>global user<span class="token punctuation">.</span>name <span class="token string">&quot;Firstname Lastname&quot;</span></span>
+<span class="line">$ git config <span class="token operator">--</span>global user<span class="token punctuation">.</span>email <span class="token string">&quot;your_email@example.com&quot;</span></span>
+<span class="line"><span class="token punctuation">[</span>user<span class="token punctuation">]</span></span>
+<span class="line">  name <span class="token operator">=</span> Firstname Lastname</span>
+<span class="line">  email <span class="token operator">=</span> your_email@example<span class="token punctuation">.</span>com</span>
+<span class="line"></span>
+<span class="line"><span class="token comment">// 将 color.ui 设置为 auto 可以让命令的输出拥有更高的可读性。</span></span>
+<span class="line">git config <span class="token operator">--</span>global color<span class="token punctuation">.</span>ui auto</span>
+<span class="line"><span class="token comment">// “~/.gitconfig”中就会增加下面一行。</span></span>
+<span class="line"><span class="token punctuation">[</span>color<span class="token punctuation">]</span></span>
+<span class="line">  ui <span class="token operator">=</span> auto</span>
+<span class="line"></span>
+<span class="line"><span class="token comment">//生成SSH后复制至GitHub同步</span></span>
+<span class="line">git<span class="token operator">-</span>keygen <span class="token operator">-</span>t rsa <span class="token operator">-</span><span class="token constant">C</span></span>
+<span class="line"><span class="token comment">// 1. git初始化 (必须初始化)</span></span>
+<span class="line">git init</span>
+<span class="line"><span class="token comment">// 2. 查看仓库状态</span></span>
+<span class="line">git status</span>
+<span class="line"><span class="token comment">// 3. 向暂存区添加文件</span></span>
+<span class="line">git add</span>
+<span class="line"><span class="token comment">// 4. 保存仓库的历史纪录 git commit -m &quot;快速备注&quot;。vim编辑器使用i进行输入，写详细备注时第一行是简要内容，第二行空行，第三行是详细内容。输入完成后按ESC输入:wq完成编辑</span></span>
+<span class="line">git commit</span>
+<span class="line"><span class="token comment">// 中止提交</span></span>
+<span class="line">如果在编辑器启动后想中止提交，提交信息留空并直接关闭编辑器，随后提交就会被中止。</span>
+<span class="line"><span class="token comment">// 修改上一条提交的信息</span></span>
+<span class="line">git commit <span class="token operator">--</span>amend</span>
+<span class="line"><span class="token comment">// 5. 查看提交日志 git log -p可查看文件的改动</span></span>
+<span class="line">git log</span>
+<span class="line"><span class="token comment">// 6. 查看当前暂存区与工作树的差别,git diff HEAD是最新差别</span></span>
+<span class="line">git diff</span>
+<span class="line"></span>
+<span class="line"><span class="token comment">// 显示分支一览表  git branch -a可以查看当前仓库和远程仓库的分支信息</span></span>
+<span class="line">git branch </span>
+<span class="line"><span class="token comment">// 切换分支</span></span>
+<span class="line">git checkout <span class="token operator">-</span>b 分支名</span>
+<span class="line"><span class="token comment">// 合并分支</span></span>
+<span class="line">git merge <span class="token operator">--</span>no<span class="token operator">-</span>ff 分支名</span>
+<span class="line"><span class="token comment">// 以图标形式查看分支</span></span>
+<span class="line">git log <span class="token operator">--</span>graph</span>
+<span class="line"><span class="token comment">// 回溯历史版本</span></span>
+<span class="line">git reset <span class="token operator">--</span>head 历史版本的哈希值</span>
+<span class="line"><span class="token comment">// 查看当前仓库执行过的操作的日志</span></span>
+<span class="line">git reflog</span>
+<span class="line"></span>
+<span class="line"><span class="token comment">// 添加远程仓库</span></span>
+<span class="line">git remote add origin git@github<span class="token punctuation">.</span>com<span class="token operator">:</span>用户名称<span class="token operator">/</span>仓库名<span class="token punctuation">.</span>git</span>
+<span class="line"><span class="token comment">// 推送至远程仓库 -u参数是设置为本地仓库的上游(upstream)</span></span>
+<span class="line">git push <span class="token operator">-</span>u origin master</span>
+<span class="line"><span class="token comment">// 获取远程仓库</span></span>
+<span class="line">git clone git@github<span class="token punctuation">.</span>com<span class="token operator">:</span>用户名称<span class="token operator">/</span>仓库名<span class="token punctuation">.</span>git</span>
+<span class="line"></span>
+<span class="line"><span class="token comment">// 本地commit回退.回退到某次commit</span></span>
+<span class="line">git reset <span class="token operator">--</span>hard commitID</span>
+<span class="line"><span class="token comment">// 本地commit回退后，提交让远程仓库同步回退</span></span>
+<span class="line">git push <span class="token operator">-</span>f origin main</span>
+<span class="line"></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="gitnone语法" tabindex="-1"><a class="header-anchor" href="#gitnone语法"><span>gitnone语法</span></a></h2><p>以”#”号开头表示注释； 以斜杠“/”开头表示目录； 以星号“<em>”通配多个字符； 以问号“?”通配单个字符 以方括号“[]”包含单个字符的匹配列表； 以叹号“!”表示不忽略(跟踪)匹配到的文件或目录； <em>.txt ，</em>.xls 表示过滤某种类型的文件 target/ ：表示过滤这个文件夹下的所有文件 /test/a.txt ，/test/b.xls 表示指定过滤某个文件下具体文件 !</em>.java , !/dir/test/ !开头表示不过滤 *.[ab] 支持通配符：过滤所有以.a或者.b为扩展名的文件 /test 仅仅忽略项目根目录下的 test 文件，不包括 child/test等非根目录的test目录</p></div><!--[--><!--]--></div><footer class="vp-page-meta"><!----><div class="vp-meta-item git-info"><div class="vp-meta-item last-updated"><span class="meta-item-label">Last Updated:: </span><time class="meta-item-info" datetime="2025-08-03T14:15:36.000Z" data-allow-mismatch>8/3/25, 2:15 PM</time></div><div class="vp-meta-item contributors"><span class="meta-item-label">Contributors: </span><span class="meta-item-info"><!--[--><!--[--><span class="contributor" title="email: tomweichat@qq.com">Tom-Lee-CN</span><!----><!--]--><!--]--></span></div></div></footer><!----><!--[--><!--]--></main><!--]--></div><!--[--><!----><!--]--><!--]--></div>
+    <script type="module" src="/Blog/assets/app-DfKvkd8b.js" defer></script>
+  </body>
+</html>
