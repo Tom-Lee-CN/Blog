@@ -17,9 +17,9 @@ Pinia 是 Vue 的官方状态管理工具，作为 Vuex 的继任者，为 Vue 3
 
 在官方文档中，Pinia 提供了四种功能，分别是：
 
-Store：在 Pinia 中，每个状态管理模块都被称为一个 Store。开发者需要创建一个 Store 实例来定义和管理状态。
-State：在 Store 中定义状态。可以使用 defineState 函数来定义一个状态，并通过 state 属性来访问它。
-Getters：类似于 Vuex 中的 getters，用于从 State 中派生出一些状态。可以使用 defineGetters 函数来定义 getters。
+Store：在 Pinia 中，每个状态管理模块都被称为一个 Store。开发者需要创建一个 Store 实例来定义和管理状态。  
+State：在 Store 中定义状态。可以使用 defineState 函数来定义一个状态，并通过 state 属性来访问它。  
+Getters：类似于 Vuex 中的 getters，用于从 State 中派生出一些状态。可以使用 defineGetters 函数来定义 getters。     
 Actions：在 Pinia 中，Actions 用于处理异步操作或执行一些副作用。可以使用 defineActions 函数来定义 Actions。
 
 ## 使用方法
