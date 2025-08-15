@@ -24,7 +24,7 @@ Actions：在 Pinia 中，Actions 用于处理异步操作或执行一些副作�
 
 ## 使用方法
 
-### 安装
+### 安装和初始化Store
 
 1.先在 store 文件夹新建一个 JS 文件并引入 pinia
 
@@ -47,9 +47,9 @@ import store from "./store"; //引入这个仓库
 createApp(App).use(store).mount("#app"); // 再use一下
 ```
 
-### Store 的使用方法。
+### State 的使用方法。
 
-1.Store：在 Pinia 中，每个状态管理模块都被称为一个 Store。开发者需要创建一个 Store 实例来定义和管理状态。在 store 文件夹的 js 中定义一个 Store 实例，通过 defineStore 函数来定义一个状态，并通过 state 属性来访问它。
+1.State：首先在 Pinia 中，每个状态管理模块都被称为一个 Store。开发者需要创建一个 Store 实例来定义和管理状态。在 store 文件夹的 js 中定义一个 Store 实例，通过 defineStore 函数来定义一个状态，并通过 state 属性来访问它。
 
 ```js
 import { defineStore } from "pinia"; // defineStore 是 store 的一部分
